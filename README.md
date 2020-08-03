@@ -50,7 +50,7 @@ After the process is over, the `localhost: 3000` page containing the developed p
 
 ## :memo: License
 
-This project is under the MIT license. See the [LICENSE] file (LICENSE.md) for more details.
+This project is under the MIT license. See the [licença](https://opensource.org/licenses/MIT) for more details.
 
 ---
 
