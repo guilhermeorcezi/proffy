@@ -35,14 +35,26 @@ The <strong>Proffy</strong> is a project made to connect teachers to students.
 
 The project was developed using the following technologies
 
+- [TypeScript](https://www.typescriptlang.org/)
+- [Knex](http://knexjs.org/)
+- [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
-- [Styled Components](https://styled-components.com//)
+- [Styled Components](https://styled-components.com/)
 
 ## :fire: How to run
+
+### :exclamation: Back-End (API server)
+Clone o projeto em seu computador. Para instalar as dependências e executar o **Servidor** (modo desenvolvimento) execute:
+```bash
+cd server
+yarn install // npm install
+yarn dev // npm dev
+```
 
 ### :exclamation: Front-End (Web Application)
 To start ** Frontend ** of React use the commands:
 ```bash
+cd web
 yarn install // npm install
 yarn start // npm start
 ```
