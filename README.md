@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="1200px" src="./github_assets/banner.png">
+    <img alt="Logo" title="#logo" width="1200px" src="./github_assets/logo.png">
     <br>
 </h3>
 <p align="center"> 🚀 <strong>Proffy</strong> Project developed during the 2nd edition of Rocketseat's NLW.
@@ -40,6 +40,20 @@ The project was developed using the following technologies
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
 - [Styled Components](https://styled-components.com/)
+
+### Web Screenshot
+<div style="display: flex; flex-direction: 'row'; align-items: 'center';">
+   <img src="./github_assets/web1.png" width="400px">
+   <img src="./github_assets/web2.png" width="400px">
+</div>
+
+### Mobile Screenshot
+<div style="display: flex; flex-direction: 'row';">
+   <img src="./github_assets/mobile1.png" width="180">
+   <img src="./github_assets/mobile2.png" width="180">
+   <img src="./github_assets/mobile3.png" width="180">
+   <img src="./github_assets/mobile4.png" width="180">
+</div>
 
 ## :fire: How to run
 
