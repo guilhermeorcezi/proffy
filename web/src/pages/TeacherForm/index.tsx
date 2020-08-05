@@ -8,6 +8,7 @@ import './styles.css';
 import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
 import api from '../../services/api';
+import { toast } from 'react-toastify';
 
 export default function TeacherForm() {
 	const [scheduleItems, setScheduleItems] = useState([
@@ -55,10 +56,10 @@ export default function TeacherForm() {
 				schedule: scheduleItems,
 			})
 			.then(() => {
-				alert('foi');
+				toast.success('Cadastro efetuado.');
 			})
 			.catch(() => {
-				alert('nao foi');
+				toast.error('Erro ao efetuar cadastro');
 			});
 	}
 
