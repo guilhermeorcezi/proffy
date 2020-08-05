@@ -43,8 +43,8 @@ The project was developed using the following technologies
 
 ### Web Screenshot
 <div style="display: flex; flex-direction: 'row'; align-items: 'center';">
-   <img src="./github_assets/web1.png" width="400px">
-   <img src="./github_assets/web2.png" width="400px">
+       <img src="./github_assets/web1.png" width="400px">
+       <img src="./github_assets/web2.png" width="400px">
 </div>
 
 ### Mobile Screenshot
