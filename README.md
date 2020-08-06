@@ -39,6 +39,7 @@ The project was developed using the following technologies
 - [Knex](http://knexjs.org/)
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
+- [React Native](https://reactnative.dev/)
 - [Styled Components](https://styled-components.com/)
 
 ### Web Screenshot
@@ -73,6 +74,17 @@ yarn install // npm install
 yarn start // npm start
 ```
 After the process is over, the `localhost: 3000` page containing the developed project will automatically open in your browser.
+
+### :exclamation: Mobile
+
+To look the mobile application with React Native, first you need to put the server's IP (or computer's IP) in the src/services/api.js file and then execute the commands:
+`` bash
+# It is NOT necessary to execute a bottom line if you already have Expo (CLI) installed
+global yarn add install expo-cli // npm install -g expo-cli
+cd mobile
+yarn install // npm installation
+yarn start // npm start
+`` ''
 
 ##: recycle: How to contribute
 - First, leave a ⭐ if you like it!
