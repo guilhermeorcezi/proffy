@@ -40,7 +40,7 @@ The project was developed using the following technologies
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
 - [React Native](https://reactnative.dev/)
-- [Styled Components](https://styled-components.com/)
+- [Expo](https://expo.io/)
 
 ### Web Screenshot
 <div style="display: flex; flex-direction: 'row'; align-items: 'center';">
