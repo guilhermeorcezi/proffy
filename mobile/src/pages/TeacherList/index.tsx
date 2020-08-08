@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import PageHeader from '../../components/PageHeader';
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
-
+import { Picker } from '@react-native-community/picker';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import styles from './styles';
@@ -74,24 +74,46 @@ const TeacherList: React.FC = () => {
 				{isFiltersVisible && (
 					<View style={styles.searchForm}>
 						<Text style={styles.label}>Matéria</Text>
-						<TextInput
-							value={subject}
-							onChangeText={(text) => setSubject(text)}
-							placeholderTextColor="#c1bccc"
-							style={styles.input}
-							placeholder="Qual a matéria"
-						/>
+						<View style={styles.inputSelect}>
+							<Picker
+								style={{ color: '#c1bccc' }}
+								selectedValue={week_day}
+								onValueChange={(itemValue, itemIndex) =>
+									setSubject(String(itemValue))
+								}
+								itemStyle={{ backgroundColor: 'grey' }}
+							>
+								<Picker.Item label="Artes" value="Artes" />
+								<Picker.Item label="Biologia" value="Biologia" />
+								<Picker.Item label="Ciência" value="Ciência" />
+								<Picker.Item label="Química" value="Química" />
+								<Picker.Item label="Física" value="Física" />
+								<Picker.Item label="Matemática" value="Matemática" />
+								<Picker.Item label="Português" value="Português" />
+							</Picker>
+						</View>
 
 						<View style={styles.inputGroup}>
 							<View style={styles.inputBlock}>
 								<Text style={styles.label}>Dia da semana</Text>
-								<TextInput
-									value={week_day}
-									onChangeText={(text) => setWeekDay(text)}
-									placeholderTextColor="#c1bccc"
-									style={styles.input}
-									placeholder="Qual o dia"
-								/>
+								<View style={styles.inputSelect}>
+									<Picker
+										style={{ color: '#c1bccc' }}
+										selectedValue={week_day}
+										onValueChange={(itemValue, itemIndex) =>
+											setWeekDay(String(itemValue))
+										}
+										itemStyle={{ backgroundColor: 'grey' }}
+									>
+										<Picker.Item label="Domingo" value="0" />
+										<Picker.Item label="Segunda-feira" value="1" />
+										<Picker.Item label="Terça-feira" value="2" />
+										<Picker.Item label="Quarta-feira" value="3" />
+										<Picker.Item label="Quinta-feira" value="4" />
+										<Picker.Item label="Sexta-feira" value="5" />
+										<Picker.Item label="Sábado" value="6" />
+									</Picker>
+								</View>
 							</View>
 
 							<View style={styles.inputBlock}>
