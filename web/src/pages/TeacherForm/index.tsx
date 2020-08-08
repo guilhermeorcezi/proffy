@@ -10,6 +10,8 @@ import Select from '../../components/Select';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
 
+import Dropzone from '../../components/Dropzone';
+
 export default function TeacherForm() {
 	const [scheduleItems, setScheduleItems] = useState([
 		{ week_day: 0, from: '', to: '' },
@@ -21,6 +23,7 @@ export default function TeacherForm() {
 	const [bio, setBio] = useState('');
 	const [subject, setSubject] = useState('');
 	const [cost, setCost] = useState('');
+	const [selectedFile, setSelectedFile] = useState<File>();
 
 	function addNewScheduleItem() {
 		setScheduleItems([...scheduleItems, { week_day: 0, from: '', to: '' }]);
@@ -45,16 +48,18 @@ export default function TeacherForm() {
 	function handleCreateClass(e: FormEvent) {
 		e.preventDefault();
 
+		const data = new FormData();
+		data.append('name', name);
+		data.append('whatsapp', whatsapp);
+		data.append('bio', bio);
+		data.append('cost', cost);
+		data.append('subject', subject);
+		data.append('schedule', JSON.stringify(scheduleItems));
+
+		if (selectedFile) data.append('image', selectedFile);
+
 		api
-			.post('classes', {
-				name,
-				avatar,
-				whatsapp,
-				bio,
-				subject,
-				cost: Number(cost),
-				schedule: scheduleItems,
-			})
+			.post('classes', data)
 			.then(() => {
 				toast.success('Cadastro efetuado.');
 			})
@@ -80,12 +85,9 @@ export default function TeacherForm() {
 							value={name}
 							onChange={(e) => setName(e.target.value)}
 						/>
-						<Input
-							name="avatar"
-							label="Avatar"
-							value={avatar}
-							onChange={(e) => setAvatar(e.target.value)}
-						/>
+
+						<Dropzone onFileUploaded={setSelectedFile} />
+
 						<Input
 							name="whatsapp"
 							label="Whatsapp"

@@ -41,15 +41,11 @@ export default class ClassesControler {
 	}
 
 	async create(request: Request, response: Response) {
-		const {
-			name,
-			avatar,
-			whatsapp,
-			bio,
-			subject,
-			cost,
-			schedule,
-		} = request.body;
+		const { name, whatsapp, bio, subject, cost, schedule } = request.body;
+
+		console.log('dados',name,whatsapp,bio,subject,cost,schedule,request.file)
+		const avatar = request.file.filename;
+
 
 		const trx = await db.transaction();
 
@@ -71,7 +67,9 @@ export default class ClassesControler {
 
 			const class_id = insertedClassesId[0];
 
-			const classSchedule = schedule.map((scheduleItem: ScheduleItem) => {
+			const scheduleJson = JSON.parse(schedule);
+
+			const classSchedule = scheduleJson.map((scheduleItem: ScheduleItem) => {
 				return {
 					class_id,
 					week_day: scheduleItem.week_day,
@@ -85,6 +83,7 @@ export default class ClassesControler {
 
 			return response.status(201).json({ created: 'ok' });
 		} catch (err) {
+			console.log(err);
 			await trx.rollback();
 
 			return response.status(400).json({
