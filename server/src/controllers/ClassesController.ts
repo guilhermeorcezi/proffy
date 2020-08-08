@@ -43,9 +43,7 @@ export default class ClassesControler {
 	async create(request: Request, response: Response) {
 		const { name, whatsapp, bio, subject, cost, schedule } = request.body;
 
-		console.log('dados',name,whatsapp,bio,subject,cost,schedule,request.file)
 		const avatar = request.file.filename;
-
 
 		const trx = await db.transaction();
 
@@ -83,7 +81,6 @@ export default class ClassesControler {
 
 			return response.status(201).json({ created: 'ok' });
 		} catch (err) {
-			console.log(err);
 			await trx.rollback();
 
 			return response.status(400).json({

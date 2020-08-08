@@ -60,7 +60,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, favorited }) => {
 	return (
 		<View style={styles.container}>
       <View style={styles.profile}>
-        <Image style={styles.avatar} source={{ uri: teacher.avatar }} />
+        <Image style={styles.avatar} source={{ uri: `http://192.168.10.4:3333/uploads/${teacher.avatar}` }} />
 
         <View style={styles.profileInfo}>
           <Text style={styles.name}>{teacher.name}</Text>
