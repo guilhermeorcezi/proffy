@@ -86,7 +86,7 @@ yarn install // npm installation
 yarn start // npm start
 ```
 
-##: recycle: How to contribute
+### How to contribute
 - First, leave a ⭐ if you like it!
 - Fork this repository;
 - Create a branch with your feature: `git checkout -b my-feature`
